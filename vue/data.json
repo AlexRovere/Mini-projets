@@ -1,0 +1,45 @@
+{
+  "data": {
+    "name": "french cookies",
+    "description": "A famous french recipe",
+    "steps": [
+      {
+        "number": 1,
+        "title": "mix the flour",
+        "description": "In a large container",
+        "image": "http://localhost:8080/img/recette1.png",
+        "ingredients": [
+          {
+            "name": "flour",
+            "quantity": "300",
+            "metrics": "gram"
+          },
+          {
+            "name": "milk",
+            "quantity": "25",
+            "metrics": "centiliter"
+          }
+        ]
+      },
+      {
+        "number": 2,
+        "title": "cut the chocolate",
+        "description": "cut the chocolate into small pieces before adding it to the prepration",
+        "image": "http://localhost:8080/img/recette2.png",
+        "ingredients": [
+          {
+            "name": "chocolate",
+            "quantity": "200",
+            "metrics": "gram"
+          }
+        ]
+      },
+      {
+        "number": 3,
+        "title": "cool the preparation",
+        "description": "put everything into the hoven",
+        "image": "http://localhost:8080/img/recette3.png"
+      }
+    ]
+  }
+}
