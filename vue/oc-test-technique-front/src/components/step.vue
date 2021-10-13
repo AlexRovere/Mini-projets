@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: "Step",
+  name: "step",
   props: {
     recipeDescription: String,
     recipeName: String,

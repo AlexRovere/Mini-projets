@@ -40,6 +40,20 @@
         "description": "put everything into the hoven",
         "image": "http://localhost:8080/img/recette3.png"
       }
+    ],
+    "comments": [
+      {
+        "content": "perfect !",
+        "note": 5
+      },
+      {
+        "content": "average !",
+        "note": 4
+      },
+      {
+        "content": "aweful !",
+        "note": 2
+      }
     ]
   }
 }

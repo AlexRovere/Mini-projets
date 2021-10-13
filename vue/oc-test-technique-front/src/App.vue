@@ -17,23 +17,49 @@
 
     <p>that's it !</p>
   </Step>
+
+  <p>Note moyenne : {{ countAverage }} / 5</p>
+
+  <Comment
+    v-for="(item, index) in comments"
+    :key="index"
+    :comment="item.content"
+    :note="item.note"
+  />
+  <add-comment />
 </template>
 
 <script>
 import axios from "axios";
 import Step from "./components/step.vue";
+import Comment from "./components/Comment.vue";
+import AddComment from "./components/AddComment.vue";
 
 export default {
   name: "App",
   components: {
     Step,
+    Comment,
+    AddComment,
   },
   data() {
     return {
       name: String,
       description: String,
       steps: [],
+      comments: [],
     };
+  },
+  computed: {
+    countAverage() {
+      let total = 0;
+      let iteration = 0;
+      this.comments.forEach((element, index) => {
+        total = total + element.note;
+        iteration += index;
+      });
+      return (total = total / iteration).toFixed(1);
+    },
   },
   mounted() {
     axios
@@ -42,7 +68,8 @@ export default {
         (response) => (
           (this.name = response["data"]["data"]["name"]),
           (this.description = response["data"]["data"]["description"]),
-          (this.steps = response["data"]["data"]["steps"])
+          (this.steps = response["data"]["data"]["steps"]),
+          (this.comments = response["data"]["data"]["comments"])
         )
       );
   },
@@ -74,6 +101,8 @@ export default {
   margin: auto;
   align-items: center;
   text-align: justify;
+  border-style: groove;
+  border-radius: 5px;
 }
 
 .flex div:nth-child(2) {
