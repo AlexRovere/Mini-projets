@@ -26,7 +26,7 @@
     :comment="item.content"
     :note="item.note"
   />
-  <add-comment />
+  <add-comment :sendComment="sendComment" />
 </template>
 
 <script>
@@ -54,11 +54,25 @@ export default {
     countAverage() {
       let total = 0;
       let iteration = 0;
-      this.comments.forEach((element, index) => {
-        total = total + element.note;
-        iteration += index;
+      this.comments.forEach((element) => {
+        total = total + parseInt(element.note);
+        iteration++;
+        console.log(total);
       });
-      return (total = total / iteration).toFixed(1);
+      let moyenne = (total / iteration).toFixed(1);
+      iteration = 0;
+      total = 0;
+      return moyenne;
+    },
+  },
+  methods: {
+    sendComment(content, note) {
+      let obj = {
+        content: content,
+        note: note,
+      };
+      this.comments.push(obj);
+      console.log(this.comments);
     },
   },
   mounted() {
