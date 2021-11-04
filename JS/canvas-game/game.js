@@ -10,9 +10,9 @@ const bigScoreEl = document.getElementById("bigScoreEl");
 const PLAYER_COLOR = "white";
 const PLAYER_SIZE = 10;
 const PROJECTILE_COLOR = "white";
-const PROJECTILE_SIZE = 50;
+const PROJECTILE_SIZE = 5;
 const PROJECTILE_SPEED = 5;
-const ENEMY_SPEED = 1;
+const ENEMY_SPEED = 2;
 const EXPLOSION_SPEED = 0.99;
 
 class Player {
